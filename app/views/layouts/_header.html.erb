@@ -1,0 +1,23 @@
+ <header class="headSec">
+      <h1></h1>
+      <ul>
+        <li><%= link_to "Home",  "/" %></li>
+        <li><%= link_to "Products",  "/items" %></li>
+        <li><%= link_to "Recipes", recipes_path %></li>
+        <!--to be updated -->
+        <% if !user_signed_in? %>
+        <li><%= link_to "Register/Login", new_user_session_path %></li>
+        
+        <% end %>
+        <!--visiable to only logged in users-->
+        <% if user_signed_in? %>
+        <li><%= link_to "My Profile", "#" %></li>
+        <li><%= link_to 'Log out', destroy_user_session_path, :method => :delete %></li>
+        <% end %>
+
+        <li><%= link_to "About Us", about_path %></li>
+        <li><%= link_to "Contact Us", contact_path %></li>
+        <li><%= link_to "Cart/Checkout", "#" %></li>
+        
+      </ul>
+</header>
