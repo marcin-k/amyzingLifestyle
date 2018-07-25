@@ -1,0 +1,76 @@
+<p id="notice"><%= notice %></p>
+<% provide(:title, "Recipes") %>
+
+ <div id="itemsContainer">
+  
+  <h1 >Recipes</h1>
+  
+  <!-- <h1 class="headings">Our Vision</h1> -->
+  
+<div>
+    <p class="aboutUs">Our bodies may be built in the kitchen, but that doesn’t mean that flavour
+    needs be left at the door. At Amyzing Lifestyle, we live to eat rather than eat to live. 
+    With our simple easy to follow recipe books you can be cooking up a storm in no time. No 
+    matter if it’s bulking in winter or cutting in summer, we can help you do it right and at 
+    the right price too. The recipes we have are more likely to burst your taste buds than 
+    break your budget. As part of the premium service Amyzing Lifestyle will allow you to 
+    create fantastic meals around the ingredients in your cupboards or plan a couple of 
+    tasty dishes based off a weekly shop.</p>
+    
+</div>
+     
+      <% @recipes.each do |recipe| %>
+      <div class="itemhols">
+       <h1>Title: <%= recipe.title %></h1>
+       
+       <%= link_to (image_tag recipe.image_url, :class => "itemholsIm"), recipe %>
+        <p>Description: <%= recipe.description %></p>
+       <p>Ingredients: <%= recipe.ingredients %>
+       
+       <p>
+        <td><%= link_to 'Show', recipe %></td>
+        <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
+        <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+       </p>
+        
+      </div>
+    <% end %>
+      
+</div>
+
+<br>
+<%= link_to 'New Recipe',  new_recipe_path, :class => "button", :role => "button" %>
+
+
+<!--<p id="notice"><%= notice %></p>-->
+
+<!--<h1>Recipes</h1>-->
+
+<!--<table>-->
+<!--  <thead>-->
+<!--    <tr>-->
+<!--      <th>Title</th>-->
+<!--      <th>Description</th>-->
+<!--      <th>Ingredients</th>-->
+<!--      <th>Text</th>-->
+<!--      <th>Image url</th>-->
+<!--      <th colspan="3"></th>-->
+<!--    </tr>-->
+<!--  </thead>-->
+
+<!--  <tbody>-->
+<!--    <% @recipes.each do |recipe| %>-->
+<!--      <tr>-->
+<!--        <td><%= recipe.title %></td>-->
+<!--        <td><%= recipe.description %></td>-->
+<!--        <td><%= recipe.ingredients %></td>-->
+<!--        <td><%= recipe.text %></td>-->
+<!--        <td><%= recipe.image_url %></td>-->
+        
+<!--      </tr>-->
+<!--    <% end %>-->
+<!--  </tbody>-->
+<!--</table>-->
+
+<!--<br>-->
+
