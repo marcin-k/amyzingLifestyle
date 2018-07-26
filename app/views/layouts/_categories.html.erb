@@ -1,0 +1,12 @@
+<% @categories.each do |category| %>
+
+<div class="itemhols">
+    <h1><%= category.title %></h1>
+    <%= link_to (image_tag category.image, size: "250x150", :class=>"/category/:title"), category %>
+    <P><%= category.description %></P>
+
+    <p><a href="/category/<%= category.title %>"><%= category.title %></a></p>
+   
+</div>
+
+<% end %>
