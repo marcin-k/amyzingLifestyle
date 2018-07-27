@@ -28,7 +28,25 @@ item_list = [
   [ "Paleo", 17, "Weekly Paleo made easy with this guide. Now enjoy the weekend!", "Recipes/paleo.jpg" ,"Recipe Books"],
   [ "Energy Bites", 16, "It’s game day and don’t forgot these quick bites for pre work-out snacks.", "Recipes/energyBites.png" ,"Recipe Books"],
   [ "Slow Cooker", 16, "Take the hassle out of your evenings with these healthy, easy to follow recipes. Turn on in the morning and come home to delicious healthy ready made meals.", "Recipes/slowCooker.jpg" ,"Recipe Books"],
-  [ "Smoothie", 12, "Just juice it with these sumptuous smoothies on the go.", "Recipes/smoothie.png" ,"Recipe Books"]
+  [ "Smoothie", 12, "Just juice it with these sumptuous smoothies on the go.", "Recipes/smoothie.png" ,"Recipe Books"],
+  
+  [ "Dumbbell Set", 40, "This set is designed for home workouts, coming with two bars and 8 assorted weights. Its everything you need for a workout.", "Gym/Dumbbell.png" ,"Gym Equipment"],
+  [ "Barbell Set", 90, "Kick it up a notch with this versatile Barbell Set.", "Gym/barbbell.png" ,"Gym Equipment"],
+  [ "Incline Bench", 350, "Add versatility to your workout with this adjustable bench. Perfect for home use.", "Gym/inclineBench.png" ,"Gym Equipment"],
+  [ "Weight Rack", 150, "Keep it all in order with this weight rack perfect for home gyms.", "Gym/weightRack.png" ,"Gym Equipment"],
+  [ "Collars", 7, "Stainless steel collars to keep your weights in check.", "Gym/collars.png" ,"Gym Equipment"],
+  [ "Kettlebell", 15, "Perfect for home gyms these kettlebells will help burn fat and improve strength, stamina and muscle tone.", "Gym/kettlebell.png" ,"Gym Equipment"],
+  [ "Circuit Bike", 300, "Spinning is a great way to burn calories, build muscle tone and increase cardio resistance as well as being a low impact exercise, you can set the Circuit Bike up in your own home, in the living room, kitchen or even outside on the nice sunny days in the summer. the front stabilisers include wheels for ease of movement.", "Gym/circuitBike.png" ,"Gym Equipment"],
+  [ "Rowing Machine", 250, "Increase endurance, improve cardio, workout your upper and lower body and you can do it all in the comfort of your own home, in the living room, kitchen or even outside on the nice sunny days in the summer. Front stabilisers include wheels for easy of movement.", "Gym/rowingMachine.png" ,"Gym Equipment"],
+  [ "TRX Set", 150, "The all-in-one, total-body workout system you can set up in less than 60 seconds at home or anywhere you go. Get stronger, build muscle, lose weight and improve flexibility fast - no weights required. The TRX Set includes two anchoring options, a workout guide, and six digital workout videos. When you buy from Barefoot.ie, you can rest assured that you're getting genuine, best-in-class TRX products that withstand heavy daily use by some of the world's most demanding users.", "Gym/trx.png" ,"Gym Equipment"],
+  [ "Weight Belt", 10, "Designed to increase intra-abdominal pressure and stabilize your entire mid-section to reduce lower back pressure during standing lifts.", "Gym/weightBelt.png" ,"Gym Equipment"],
+  [ "Workout Gloves", 25, "These Workout Gloves are padded on the palm of the hand to ensure you have as comfortable a grip as possible.", "Gym/workoutGloves.png" ,"Gym Equipment"],
+  [ "Liquid Chalk", 15, "Improves grip by reducing sweat. Less mess, original and best. Suitable for most sports.", "Gym/liquidChalk.png" ,"Gym Equipment"],
+  [ "Gym Mat", 30, "Ideal product for protecting floors from all kinds of keep-fit equipment such as Treadmills, Bikes, Ellipticals etc.", "Gym/gymMat.png" ,"Gym Equipment"],
+  [ "Abdominal Shaper", 7, "Comes with head support and arm cradle to make doing crunches easier. Great for use at home or in a gym for an ab workout.", "Gym/abShaper.png" ,"Gym Equipment"],
+  [ "Weight Lifting Straps", 4, "For those of you who like to lift heavy. Padded cushion wrists will aid for heavier lifts and the rubberised traction stabilises and supports the wrists.", "Gym/straps.png" ,"Gym Equipment"],
+  [ "Resistance Bands", 15, "Our exercising loop resistance power bands are vibrantly colourful and easy to use. The different sizes available for purchase make a wide range of exercises available for people across varying fitness levels.", "Gym/resistanceBand.png" ,"Gym Equipment"],
+  [ "Medicine Balls", 12, "Tone and strengthen the upper and lower body. Ideal for fitness and workout regimes as well as rehabilitation from injury.", "Gym/medicineBall.png" ,"Gym Equipment"]
 ]
 
 item_list.each do |title, price, description, image_url, category|
