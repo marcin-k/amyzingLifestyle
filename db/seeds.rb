@@ -9,7 +9,7 @@ recipes = Recipe.create([{title: 'Asian', description: 'test description', ingre
 
 item_list = [
   [ "Dumbbell Set", 40, "This set is designed for home workouts, coming with two bars and 8 assorted weights. Its everything you need for a workout.", "Gym/dumbbells.png" ,"Gym Equipment"],
-  [ "Barbell Set", 90, "Kick it up a notch with this versatile Barbell Set.", "Gym/barbbell.png" ,"Gym Equipment"],
+  [ "Barbell Set", 90, "Kick it up a notch with this versatile Barbell Set.", "Gym/barbell.png" ,"Gym Equipment"],
   [ "Incline Bench", 350, "Add versatility to your workout with this adjustable bench. Perfect for home use.", "Gym/inclineBench.png" ,"Gym Equipment"],
   [ "Weight Rack", 150, "Keep it all in order with this weight rack perfect for home gyms.", "Gym/weightRack.png" ,"Gym Equipment"],
   [ "Collars", 7, "Stainless steel collars to keep your weights in check.", "Gym/collars.png" ,"Gym Equipment"],
