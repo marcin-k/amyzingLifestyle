@@ -11,7 +11,7 @@
         <% end %>
         <!--visiable to only logged in users-->
         <% if user_signed_in? %>
-          <li><%= link_to "My Profile", "#" %></li>
+          <li><%= link_to 'My Profile', edit_user_registration_path %></li>
           <li><%= link_to 'Log out', destroy_user_session_path, :method => :delete %></li>
           <% if current_user.role.eql? "standard" %>
             <li><%= link_to "Upgrade to Pro", "#" %></li>
@@ -20,7 +20,7 @@
             <li><%= link_to "Manage Orders", "#" %></li>
             <li><%= link_to "Manage Categories", "/categories" %></li>
           <% else %>
-            <li><%= link_to "Cart/Checkout", "#" %></li>
+            <li><%= link_to "Cart/Checkout", "/cart" %></li>
           <% end %>  
         <% end %>
 

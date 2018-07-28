@@ -28,12 +28,13 @@ class CartController < ApplicationController
   
 
   def index
-    # passes a cart to display
-    if session[:cart] then
+    # pass the cart to be displayed
+    if session[:cart] then 
       @cart = session[:cart]
     else
-      @cart = {}
-    end  
+      @cart ={}
+    end
+    
   end
 
   def createOrder 
