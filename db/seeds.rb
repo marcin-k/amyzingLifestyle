@@ -54,3 +54,13 @@ item_list = [
 item_list.each do |title, price, description, image_url, category|
   Item.create( title: title, price: price, description: description, image_url: image_url, category: category )
 end 
+
+category_list = [
+  ["Gym Equipment","Gym's are a great way to stay active but sometimes we let January's good intensions come back as July's money tension with a seldom used and sorely expensive year long membership. And often, we pay all that money to use the same couple of pieces of equipment. Better to take control of your workout routine with only the gear you need. From dumbbell sets that can fit under your bed to convert an unused garage into your new workout space we have all that you need.","Categories/homeGym.jpg"],
+  ["Mindfulness","Striking the right balance in our busy routines is an important way for us to stay healthy. Getting into the right frame of mind can have untold benefits on everything from reducing stress to relieving back pain, but it is often somethng we can take for granted. The mind like any other part of the body needs attention. With us we can work together to help you to find your centre.","Categories/mindful.jpg"],
+  ["Recipe Books","Our bodies may be sculpted in the gym but they are most definitely built in the kitchen. And getting the nutrients and energy we need impacts not only on our physical well-being but on our mental well-being also. Not everyone is born a chef but the tired mantra of can't cook, won't cook can be consigned to the past with our great range of recipe books. With us you can learn to cook great tasting from around the world whatever your nutritional requirements.","Categories/recipes.png"]
+]
+
+category_list.each do |title, description, image|
+  Category.create( title: title, description: description, image: image )
+end 
