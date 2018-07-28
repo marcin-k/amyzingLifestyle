@@ -28,49 +28,25 @@
        <p>Ingredients: <%= recipe.ingredients %>
        
        <p>
-        <td><%= link_to 'Show', recipe %></td>
-        <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
-        <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', recipe, :class => "button", :role => "button" %></td>
+        <% if user_signed_in? %>
+         <% if current_user.role.eql? "admin" %>
+           <td><%= link_to 'Edit', edit_recipe_path(recipe), :class => "button", :role => "button" %></td>
+           <td><%= link_to 'Destroy', recipe, :class => "button", :role => "button", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+         <% end %>
+        <% end %>
        </p>
-        
       </div>
     <% end %>
       
 </div>
 
 <br>
-<%= link_to 'New Recipe',  new_recipe_path, :class => "button", :role => "button" %>
+<% if user_signed_in? %>
+ <% if current_user.role.eql? "admin" %>
+  <%= link_to 'New Recipe',  new_recipe_path, :class => "button", :role => "button" %>
+ <% end %>
+<% end %>
 
 
-<!--<p id="notice"><%= notice %></p>-->
-
-<!--<h1>Recipes</h1>-->
-
-<!--<table>-->
-<!--  <thead>-->
-<!--    <tr>-->
-<!--      <th>Title</th>-->
-<!--      <th>Description</th>-->
-<!--      <th>Ingredients</th>-->
-<!--      <th>Text</th>-->
-<!--      <th>Image url</th>-->
-<!--      <th colspan="3"></th>-->
-<!--    </tr>-->
-<!--  </thead>-->
-
-<!--  <tbody>-->
-<!--    <% @recipes.each do |recipe| %>-->
-<!--      <tr>-->
-<!--        <td><%= recipe.title %></td>-->
-<!--        <td><%= recipe.description %></td>-->
-<!--        <td><%= recipe.ingredients %></td>-->
-<!--        <td><%= recipe.text %></td>-->
-<!--        <td><%= recipe.image_url %></td>-->
-        
-<!--      </tr>-->
-<!--    <% end %>-->
-<!--  </tbody>-->
-<!--</table>-->
-
-<!--<br>-->
 

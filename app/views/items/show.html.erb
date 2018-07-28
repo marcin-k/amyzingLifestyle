@@ -1,7 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-
-
  <div id="itemsContainer">
    <h1><%= @item.title %></h1>
    <%= image_tag @item.image_url, :class => 'welcomIm'  %>
@@ -13,15 +11,18 @@
         Category: <%= @item.category %>
         <br>
 
-       
        <p>
          <%= link_to 'Back',  items_path, :class => "button", :role => "button" %>
-         <%= link_to 'Edit',  edit_item_path(@item), :class => "button", :role => "button" %>
-         
+          <% if !user_signed_in? %>
+             <a href="/cart/<%= @item.id %>" class="button"> Add To Cart</a>
+          <% else %>
+             <% if current_user.role.eql? "admin" %>
+               <%= link_to 'Edit',  edit_item_path(@item), :class => "button", :role => "button" %> 
+             <% else %>
+               <a href="/cart/<%= @item.id %>" class="button"> Add To Cart</a>
+             <% end %> 
+          <% end %>
        </p>
-        
       </div>
-   
-   
    </div>
 
