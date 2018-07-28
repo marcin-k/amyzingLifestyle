@@ -64,3 +64,10 @@ category_list = [
 category_list.each do |title, description, image|
   Category.create( title: title, description: description, image: image )
 end 
+
+# Creates an admin account 
+user = User.new
+user.email = 'admin@admin.com'
+user.password = 'administrator'
+user.role = 'admin'
+user.save!
