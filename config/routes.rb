@@ -3,7 +3,10 @@ Rails.application.routes.draw do
   resources :categories
   resources :recipes
   devise_for :users
-  get 'cart/index'
+  get '/cart' => 'cart#index'
+  get '/cart/clear' => 'cart#clear'
+  get '/cart/:id' => 'cart#add'
+  get '/cart/remove/:id' => 'cart#remove'
   resources :items
   root 'static_pages#home'
   
