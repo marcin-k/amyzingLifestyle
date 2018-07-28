@@ -1,13 +1,20 @@
 Rails.application.routes.draw do
   
+  resources :orders do 
+    resources:orderitems
+  end
   resources :categories
+  devise_for :users do 
+    resources :orders 
+  end
   resources :recipes
-  devise_for :users
+  
   get '/cart' => 'cart#index'
   get '/cart/clear' => 'cart#clear'
   get '/cart/:id' => 'cart#add'
   get '/cart/remove/:id' => 'cart#remove'
   resources :items
+  get '/checkout' => 'cart#createOrder'
   root 'static_pages#home'
   
   get 'static_pages/home'
