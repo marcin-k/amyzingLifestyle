@@ -55,7 +55,6 @@ ActiveRecord::Schema.define(version: 2018_07_28_120038) do
     t.string "title"
     t.text "description"
     t.string "ingredients"
-    t.string "text"
     t.string "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
