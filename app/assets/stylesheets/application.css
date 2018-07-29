@@ -109,7 +109,8 @@ li a {
     width: 22%;
     padding:10px;
     min-height: 300px;
-   
+    vertical-align: text-top;
+    
 }
 
 
