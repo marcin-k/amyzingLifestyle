@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   end
   resources :recipes
   
+  
   get '/cart' => 'cart#index'
   get '/cart/clear' => 'cart#clear'
   get '/cart/:id' => 'cart#add'
@@ -16,7 +17,9 @@ Rails.application.routes.draw do
   resources :items
   get '/checkout' => 'cart#createOrder'
   root 'static_pages#home'
-  
+  get '/shipped/:id' => 'orders#shipped'
+  get '/paid/:id' => 'orders#pro_paid'
+  get '/pro_paid/:id' => 'orders#pro_paid'
   get 'static_pages/home'
   get '/contact' => 'static_pages#contactUs'
   get '/about' => 'static_pages#aboutUs'
@@ -24,7 +27,7 @@ Rails.application.routes.draw do
 
   get '/login' => 'user#login' 
   get '/logout' => 'user#logout'
-  
+  get '/upgrade' => 'static_pages#upgradeToPro'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

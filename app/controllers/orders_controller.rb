@@ -10,6 +10,22 @@ class OrdersController < ApplicationController
   # GET /orders/1
   # GET /orders/1.json
   def show
+    @orderitems = Orderitem.where(order_id: params[:id])
+  end
+
+  def shipped
+    @order = Order.find(params[:id])
+    @order.update_attribute(:status, "Dispatched")
+  end
+
+  def paid
+    @order = Order.find(params[:id])
+    @order.update_attribute(:status, "Paid")
+  end
+
+  def pro_paid
+    @user = User.find(params[:id])
+    @user.update_attribute(:role, "pro")
   end
 
   # GET /orders/new
@@ -19,6 +35,7 @@ class OrdersController < ApplicationController
 
   # GET /orders/1/edit
   def edit
+
   end
 
   # POST /orders

@@ -3,17 +3,48 @@
 <p>
   <strong>Order date:</strong>
   <%= @order.order_date %>
+ <%= @order.id %>
 </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @order.user %>
-</p>
+<% if current_user.role.eql? "admin" %>
+  <p>
+    <strong>Order ID:</strong>
+   
+   This order id is: <%= @order.id %>
+  </p>
+  
+  <p>
+    <strong>User:</strong>
+    <%= @order.user %>
+  </p>
+<% end %>
+
+
 
 <p>
   <strong>Status:</strong>
   <%= @order.status %>
 </p>
 
-<%= link_to 'Edit', edit_order_path(@order) %> |
-<%= link_to 'Back', orders_path %>
+<h1>Items in this order</h1>
+
+<table id="customers">
+  
+  
+<% @orderitems.each do |orderitem| %>
+
+<tr>
+  <td><%= orderitem.title %></td>
+  <td><%= orderitem.quantity %></td>
+</tr>
+
+<% end %>
+
+</table>
+<% if current_user.role.eql? "admin" %>
+  <a href="/shipped/<%= @order.id %>" class="button">Mark as Shipped</a>
+<% end %>  
+<% if current_user.role.eql? "admin" %>
+  <%= link_to 'Edit', edit_order_path(@order), :class => "button", :role => "button" %> |
+<% end %>
+<%= link_to 'Back', orders_path , :class => "button", :role => "button" %>
