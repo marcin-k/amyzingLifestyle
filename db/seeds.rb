@@ -71,3 +71,17 @@ category_list = [
 # user.password = 'administrator'
 # user.role = 'admin'
 # user.save!
+
+# # Creates an normal account 
+# user = User.new
+# user.email = 'test@test.com'
+# user.password = 'tester1'
+# user.role = 'standard'
+# user.save!
+
+# # Creates a pro account 
+# user = User.new
+# user.email = 'pro@pro.com'
+# user.password = 'prouser1'
+# user.role = 'pro'
+# user.save!
