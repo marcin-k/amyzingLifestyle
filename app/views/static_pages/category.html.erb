@@ -3,10 +3,23 @@
  <div id="itemsContainer">
   
   <h1 class="headings">Category</h1>
+      <% if user_signed_in? %>
+       <% if (current_user.role.eql? "admin") || (current_user.role.eql? "pro") %>
+         <%  @pro_user = true %>
+       <% end %>  
+       <% else %>
+          <%  @pro_user = false %>
+      <% end %>
      
       <% @items.each do |item| %>
+      
+      <% if (!item.pro_only?) || @pro_user %>   
       <div class="itemhols">
-       <h1><%= item.title %></h1>
+       <% if item.pro_only? %>     
+        <h1 class="proId"><%= item.title %> - PRO ONLY!</h1>
+       <% else %>
+        <h1><%= item.title %></h1>
+       <% end %> 
        
        <%= link_to (image_tag item.image_url, :class => "itemholsIm"), item %>
         <p><%= item.description %></p>
@@ -19,15 +32,18 @@
          <a href="/cart/<%= item.id %>" class="button"> Add To Cart</a>
          <%= link_to 'Show',  item, :class => "button", :role => "button" %>
          <% if user_signed_in? %>
-
-         <%= link_to 'Edit',  edit_item_path(item), :class => "button", :role => "button" %>
-         <%= link_to 'Destroy',  item, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button", :role => "button" %>
+    
+         <% if current_user.role.eql? "admin" %>
+          <%= link_to 'Edit',  edit_item_path(item), :class => "button", :role => "button" %>
+          <%= link_to 'Destroy',  item, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button", :role => "button" %>
+         <% end %>
+         
         <% end %>
        </p>
         
       </div>
     <% end %>
-      
+    <% end %>  
 </div>
 
 <br>

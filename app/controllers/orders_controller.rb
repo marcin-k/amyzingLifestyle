@@ -18,10 +18,7 @@ class OrdersController < ApplicationController
     @order.update_attribute(:status, "Dispatched")
   end
 
-  def paid
-    @order = Order.find(params[:id])
-    @order.update_attribute(:status, "Paid")
-  end
+
 
   def pro_paid
     @user = User.find(params[:id])

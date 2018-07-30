@@ -14,14 +14,25 @@
     tasty dishes based off a weekly shop.</p>
     
 </div>
-     
+      <% if user_signed_in? %>
+       <% if (current_user.role.eql? "admin") || (current_user.role.eql? "pro") %>
+         <%  @pro_user = true %>
+       <% end %>  
+       <% else %>
+          <%  @pro_user = false %>
+      <% end %>
       <% @recipes.each do |recipe| %>
+      
+      <% if (!recipe.pro_only?) || @pro_user %> 
       <div class="itemhols">
-       <h1>Title: <%= recipe.title %></h1>
+       <% if recipe.pro_only? %>     
+        <h1 class="proId"><%= recipe.title %> - PRO ONLY!</h1>
+       <% else %>
+        <h1><%= recipe.title %></h1>
+       <% end %> 
        
        <%= link_to (image_tag recipe.image_url, :class => "itemholsIm"), recipe %>
-        <p>Description: <%= recipe.description %></p>
-       <p>Ingredients: <%= recipe.ingredients %>
+        
        
        <p>
         <td><%= link_to 'Show', recipe, :class => "button", :role => "button" %></td>
@@ -33,6 +44,7 @@
         <% end %>
        </p>
       </div>
+    <% end %>
     <% end %>
       
 </div>

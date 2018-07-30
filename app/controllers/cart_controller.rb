@@ -26,6 +26,13 @@ class CartController < ApplicationController
     redirect_to :action => :index
   end 
   
+  def paid
+    @order = Order.find(params[:id])
+    @order.update_attribute(:status, "Paid")
+    session[:cart] = nil
+    
+  end
+
 
   def index
     # pass the cart to be displayed

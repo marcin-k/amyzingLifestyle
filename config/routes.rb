@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   get '/checkout' => 'cart#createOrder'
   root 'static_pages#home'
   get '/shipped/:id' => 'orders#shipped'
-  get '/paid/:id' => 'orders#pro_paid'
+  get '/paid/:id' => 'cart#paid'
   get '/pro_paid/:id' => 'orders#pro_paid'
   get 'static_pages/home'
   get '/contact' => 'static_pages#contactUs'

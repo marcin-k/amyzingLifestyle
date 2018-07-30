@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2018_07_30_192201) do
     t.decimal "price"
     t.string "image_url"
     t.string "category"
+    t.boolean "pro_only"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -56,6 +57,7 @@ ActiveRecord::Schema.define(version: 2018_07_30_192201) do
     t.text "description"
     t.string "ingredients"
     t.string "image_url"
+    t.boolean "pro_only"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

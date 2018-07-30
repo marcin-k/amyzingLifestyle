@@ -1,8 +1,9 @@
 <p id="notice"><%= notice %></p>
 
+
+
 <p>
-  <strong>Title:</strong>
-  <%= @recipe.title %>
+  <%= (image_tag @recipe.image_url, :class => "itemholsIm") %>
 </p>
 
 <p>
@@ -15,15 +16,11 @@
   <%= @recipe.ingredients %>
 </p>
 
-<p>
-  <strong>Text:</strong>
-  <%= @recipe.text %>
-</p>
 
-<p>
-  <strong>Image url:</strong>
-  <%= @recipe.image_url %>
-</p>
 
-<%= link_to 'Edit', edit_recipe_path(@recipe) %> |
-<%= link_to 'Back', recipes_path %>
+<% if user_signed_in? %>
+  <% if current_user.role.eql? "admin" %>
+    <%= link_to 'Edit', edit_recipe_path(@recipe), :class => "button", :role => "button" %> 
+  <% end %>    
+<% end %>
+<%= link_to 'Back', recipes_path, :class => "button", :role => "button" %> 
