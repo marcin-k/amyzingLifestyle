@@ -5,6 +5,7 @@ class CreateRecipes < ActiveRecord::Migration[5.2]
       t.text :description
       t.string :ingredients
       t.string :image_url
+      t.boolean :pro_only
 
       t.timestamps
     end

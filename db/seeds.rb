@@ -73,15 +73,15 @@ user.role = 'admin'
 user.save!
 
 # Creates an normal account 
-user = User.new
-user.email = 'test@test.com'
-user.password = 'tester1'
-user.role = 'standard'
-user.save!
+user2 = User.new
+user2.email = 'test@test.com'
+user2.password = 'tester1'
+user2.role = 'standard'
+user2.save!
 
 # Creates a pro account 
-user = User.new
-user.email = 'pro@pro.com'
-user.password = 'prouser1'
-user.role = 'pro'
-user.save!
+user3 = User.new
+user3.email = 'pro@pro.com'
+user3.password = 'prouser1'
+user3.role = 'pro'
+user3.save!

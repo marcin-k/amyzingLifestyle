@@ -6,6 +6,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.decimal :price
       t.string :image_url
       t.string :category
+      t.boolean :pro_only
 
       t.timestamps
     end
