@@ -206,3 +206,8 @@ h4 {
 .paddingLeft{
     padding-left: 5%;
 }
+
+#error_explanation{
+    color: yellow;
+    background-color: yellow;
+}
