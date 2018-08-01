@@ -14,7 +14,7 @@
  *= require_self
  */
 .headSec {
-    background: url("/assets/logo.jpg");
+    background: url("logo.jpg");
     min-height:10px;
     background-color: #b3e0ff;
     width: 100%;
