@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2018_07_30_192201) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "categories", force: :cascade do |t|
     t.string "title"
     t.text "description"
@@ -37,7 +40,7 @@ ActiveRecord::Schema.define(version: 2018_07_30_192201) do
     t.text "description"
     t.integer "quantity"
     t.decimal "price"
-    t.integer "order_id"
+    t.bigint "order_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["order_id"], name: "index_orderitems_on_order_id"
@@ -45,7 +48,7 @@ ActiveRecord::Schema.define(version: 2018_07_30_192201) do
 
   create_table "orders", force: :cascade do |t|
     t.datetime "order_date"
-    t.integer "user_id"
+    t.bigint "user_id"
     t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -85,4 +88,6 @@ ActiveRecord::Schema.define(version: 2018_07_30_192201) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "orderitems", "orders"
+  add_foreign_key "orders", "users"
 end
