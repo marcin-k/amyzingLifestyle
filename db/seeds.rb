@@ -1,47 +1,23 @@
-
-recipes = Recipe.create([{title: 'Asian', description: 'test description', ingredients: 'no ingredients',image_url: 'Recipes/asian.png'} ])
-#clear current tables to avoid duplications
-ActiveRecord::Base.establish_connection
-ActiveRecord::Base.connection.tables.each do |table|
-  next if table == 'schema_migrations'
-   ActiveRecord::Base.connection.execute("DELETE FROM #{table}")
-end
+# #clear current tables to avoid duplications
+# ActiveRecord::Base.establish_connection
+# ActiveRecord::Base.connection.tables.each do |table|
+#   next if table == 'schema_migrations'
+#   ActiveRecord::Base.connection.execute("DELETE FROM #{table}")
+# end
 
 recipes = Recipe.create([{title: 'Thai prawns with pineapple & green beans', description: 'Mix the sauce ingredients together in a small bowl. Set aside. Heat the oil in a large wok. Sauté the lemongrass and ginger until golden. Add the pineapple, beans and cherry tomatoes, and stir-fry for 3-5 mins until the beans are just cooked. Add the prawns and the sauce. Stir-fry for another 3-5 mins until the prawns are cooked, then throw in most of the basil leaves. Serve with lime wedges and the remaining basil leaves scattered over.', ingredients: '1 tbsp vegetable oil
-2 lemongrass stalks, tough outer leaves removed, the rest finely chopped
-thumb-sized piece ginger
-, shredded
-100g fresh pineapple
- chunks
-100g green bean
-100g whole cherry tomato
-200g raw king prawn
-small pack Thai basil leaves or regular basil leaves
-For the sauce
-4 tbsp lime juice, plus wedges to serve
-2 tbsp liquid chicken stock
-1 tbsp fish sauce
+2 lemongrass stalks, tough outer leaves removed, the rest finely chopped thumb-sized piece ginger, shredded
+100g fresh pineapple chunks100g green bean100g whole cherry tomato200g raw king prawnsmall pack Thai basil leaves or regular basil leaves
+For the sauce 4 tbsp lime juice, plus wedges to serve 2 tbsp liquid chicken stock 1 tbsp fish sauce
 1 tbsp soft brown sugar',image_url: 'Recipes/re1.jpg', pro_only: true} ])
 
 recipes = Recipe.create([{title: 'Paillard of chicken with lemon & herbs', description: 'Place each chicken breast between 2 sheets of cling film or baking parchment. Use a meat mallet or rolling pin to bash each piece of chicken – flatten out to an even layer about 0.5cm thick. Transfer to a dish.
 To make the marinade, crush the garlic with a good pinch of salt using a pestle and mortar. Add the rosemary and sage, and give everything a good pounding. Stir through the lemon zest and juice, olive oil and some ground black pepper. Pour the marinade over the chicken, ensuring that it’s well coated. Cover and chill for at least 2 hrs.
 Heat the barbecue. Once the flames have died down, spread the coals out to an even layer. Cook the chicken for 1-2 mins each side. Transfer to a board and leave to rest for a few mins.
 Meanwhile, pour the oil and balsamic vinegar into a large bowl. Add the rocket and some seasoning. Toss together, then shave over the Parmesan. Serve the salad with the chicken, with lemon wedges to squeeze over.', 
-ingredients: '6 skinless chicken breasts
-2 tbsp olive oil
-1⁄2 tbsp balsamic vinegar
-140g bag rocket
-25g parmesan
-lemon
- wedges
-For the marinade
-2 garlic cloves
-3 rosemary
- sprigs, leaves finely chopped
-6 sage
- leaves, finely shredded
-zest 1 lemon
- and juice of ½
+ingredients: '6 skinless chicken breasts 2 tbsp olive oil 1⁄2 tbsp balsamic vinegar 140g bag rocket
+25g parmesan lemon wedges For the marinade 2 garlic cloves 3 rosemary sprigs, leaves finely chopped 6 sage 
+leaves, finely shredded zest 1 lemon and juice of ½
 3 tbsp olive oil',image_url: 'Recipes/re2.jpg', pro_only: false} ])
 
 recipes = Recipe.create([{title: 'Broccoli and kale green soup', description: 'Put the oil in a deep pan, add the garlic, ginger, coriander, turmeric and salt, fry on a medium heat for 2 mins, then add 3 tbsp water to give a bit more moisture to the spices.
@@ -49,14 +25,8 @@ Add the courgettes, making sure you mix well to coat the slices in all the spice
 Add the broccoli, kale and lime juice with the rest of the stock. Leave to cook again for another 3-4 mins until all the vegetables are soft.
 Take off the heat and add the chopped parsley. Pour everything into a blender and blend on high speed until smooth. It will be a beautiful green with bits of dark speckled through (which is the kale). Garnish with lime zest and parsley.', 
 ingredients: '500ml stock, made by mixing 1 tbsp bouillon powder and boiling water in a jug
-1 tbsp sunflower oil
-2 garlic cloves, sliced
-thumb-sized piece ginger
-, sliced
-½ tsp ground coriander
-3cm/1in piece fresh turmeric
- root, peeled and grated, or ½ tsp ground turmeric
-pinch of pink Himalayan salt
+1 tbsp sunflower oil 2 garlic cloves, sliced thumb-sized piece ginger, sliced ½ tsp ground coriander
+3cm/1in piece fresh turmeric root, peeled and grated, or ½ tsp ground turmeric pinch of pink Himalayan salt
 200g courgettes
 , roughly sliced
 85g broccoli
